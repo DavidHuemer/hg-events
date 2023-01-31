@@ -7,6 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import {MatIconModule} from "@angular/material/icon";
 import { PublicPageComponent } from './pages/public-page/public-page.component';
+import {MatCardModule} from "@angular/material/card";
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { PublicPageComponent } from './pages/public-page/public-page.component';
   imports: [
     CommonModule,
     PublicRoutingModule,
-    MatIconModule
+    MatIconModule,
+    MatCardModule
   ]
 })
 export class PublicModule { }
