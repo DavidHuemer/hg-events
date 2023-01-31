@@ -8,6 +8,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import {MatIconModule} from "@angular/material/icon";
 import { PublicPageComponent } from './pages/public-page/public-page.component';
 import {MatCardModule} from "@angular/material/card";
+import {MatDividerModule} from "@angular/material/divider";
+import {MatButtonModule} from "@angular/material/button";
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import {MatCardModule} from "@angular/material/card";
     CommonModule,
     PublicRoutingModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatDividerModule,
+    MatButtonModule
   ]
 })
 export class PublicModule { }
