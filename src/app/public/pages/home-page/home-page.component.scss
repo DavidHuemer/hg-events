@@ -1,0 +1,54 @@
+.image-container {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-image: url("https://www.hg-events.at/assets/images/backgrounds/Mischpult_closeup_wide.jpg");
+  background-color: black;
+  background-size: cover;
+}
+
+.center{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.text-container{
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  border: 1px solid white;
+
+  animation-name: text-container;
+  animation-duration: 1s;
+  white-space: nowrap;
+  overflow: hidden;
+  animation-fill-mode: forwards;
+}
+
+.text{
+  margin: 1rem;
+  font-size: 4rem;
+  line-height: 4rem;
+  font-weight: bold;
+  display: block;
+}
+
+@keyframes text-container {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .text{
+    font-size: 2rem;
+  }
+}
