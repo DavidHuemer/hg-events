@@ -1,0 +1,17 @@
+@import "~src/styles/variables";
+
+.page{
+  margin-top: $headerHeight;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.equipments-page{
+  width: 1000px;
+  padding: 1rem;
+}
+
+.equipment{
+  background-color: gray;
+}

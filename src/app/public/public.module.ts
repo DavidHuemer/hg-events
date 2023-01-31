@@ -10,6 +10,7 @@ import { PublicPageComponent } from './pages/public-page/public-page.component';
 import {MatCardModule} from "@angular/material/card";
 import {MatDividerModule} from "@angular/material/divider";
 import {MatButtonModule} from "@angular/material/button";
+import { EquipmentsPageComponent } from './pages/equipments-page/equipments-page.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import {MatButtonModule} from "@angular/material/button";
     HomePageComponent,
     HeaderComponent,
     FooterComponent,
-    PublicPageComponent
+    PublicPageComponent,
+    EquipmentsPageComponent
   ],
   imports: [
     CommonModule,
