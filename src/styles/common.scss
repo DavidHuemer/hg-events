@@ -16,6 +16,12 @@
   gap: $gap;
 }
 
+@mixin horizontalList($gap: 1rem){
+  display: flex;
+  flex-direction: row;
+  gap: $gap;
+}
+
 @keyframes fade-in {
   0% {
     opacity: 0;
