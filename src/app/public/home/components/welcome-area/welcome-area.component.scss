@@ -1,0 +1,107 @@
+@use "~src/styles/common";
+
+$horizontalAnimationDuration: 1s;
+$secondAnimationDuration: 0.5s;
+$borderColor: #eeeeee;
+
+$desktopFontSize: 4rem;
+$mobileFontSize: 2rem;
+
+$desktopWidth: 500px;
+$mobileWidth: 300px;
+
+.welcome-area {
+  @include common.verticalList(1rem);
+  align-items: center;
+}
+
+.text-container {
+  border-left: 1px solid $borderColor;
+  border-right: 1px solid $borderColor;
+  background-color: rgba(0, 0, 0, 0.8);
+
+  animation-name: text-container;
+  animation-duration: $horizontalAnimationDuration;
+  animation-fill-mode: forwards;
+
+  height: 8rem;
+  @include common.disableTextWrap;
+}
+
+.horizontal-border {
+  width: 100%;
+  height: 100%;
+
+  position: relative;
+
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+
+  animation-name: text-container-border;
+  animation-delay: $horizontalAnimationDuration;
+  animation-duration: $secondAnimationDuration;
+  animation-fill-mode: forwards;
+
+  @include common.disableTextWrap();
+}
+
+
+.text {
+  color: white;
+  font-weight: bold;
+  font-size: $desktopFontSize;
+  line-height: $desktopFontSize;
+
+  @include common.translateCenter;
+}
+
+.request {
+  animation-name: fade-in;
+  animation-fill-mode: forwards;
+  animation-duration: $secondAnimationDuration;
+  animation-delay: $horizontalAnimationDuration;
+  opacity: 0;
+}
+
+@keyframes text-container-border {
+  0% {
+    border-bottom-color: transparent;
+    border-top-color: transparent;
+  }
+
+  100% {
+    border-bottom-color: $borderColor;
+    border-top-color: $borderColor;
+  }
+}
+
+@keyframes text-container {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: $desktopWidth;
+  }
+}
+
+@media (max-width: $desktopWidth + 60px) {
+  .text-container {
+    width: 300px;
+    height: 6rem;
+    animation-name: text-container-mobile;
+  }
+
+  .text{
+    font-size: $mobileFontSize;
+    line-height: $mobileFontSize;
+  }
+}
+
+@keyframes text-container-mobile {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: $mobileWidth;
+  }
+}

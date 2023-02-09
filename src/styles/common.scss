@@ -1,0 +1,26 @@
+@mixin disableTextWrap{
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@mixin translateCenter{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+@mixin verticalList($gap: 1rem){
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
