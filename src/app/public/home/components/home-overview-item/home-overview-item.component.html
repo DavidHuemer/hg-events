@@ -1,0 +1,18 @@
+<mat-card class="item">
+  <mat-card-header>
+    <mat-card-title>{{title}}</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image [src]="imageUrl" alt="Photo of a Shiba Inu">
+
+  <mat-card-content>
+    <div class="item-content">
+      <div>
+        {{text}}
+      </div>
+    </div>
+  </mat-card-content>
+
+  <mat-card-footer class="footer">
+    <button mat-raised-button class="more-button" [routerLink]="link">Erfahren Sie mehr</button>
+  </mat-card-footer>
+</mat-card>

@@ -1,0 +1,35 @@
+@use "~src/styles/common";
+
+$overviewDesktopWide: 800px;
+$overviewDesktopSmall: 650px;
+$overviewMobileWide: 350px;
+
+.overview {
+  width: 800px;
+  @include common.horizontalList(2rem);
+  align-items: stretch;
+  margin: 1rem;
+}
+
+.overview > * {
+  width: 100%;
+}
+
+@media (max-width: $overviewDesktopWide + 50px) {
+  .overview {
+    width: $overviewDesktopSmall;
+  }
+}
+
+@media (max-width: $overviewDesktopSmall + 50px) {
+  .overview {
+    width: $overviewMobileWide;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: $overviewMobileWide + 50px) {
+  .overview {
+    width: auto;
+  }
+}
