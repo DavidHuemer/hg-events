@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "hg-events-219d1": {
+      "hosting": {
+        "hg-events": [
+          "hg-events-219d1"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "hg-events-219d1"
+  }
+}

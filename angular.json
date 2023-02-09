@@ -102,6 +102,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "hg-events:build:production",
+            "firebaseProject": "hg-events-219d1",
+            "firebaseHostingSite": "hg-events-219d1"
+          }
         }
       }
     }
