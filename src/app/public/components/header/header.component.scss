@@ -1,40 +1,36 @@
 @import "~src/styles/variables";
+@import "~src/styles/common";
 
-.header{
+.header {
   background-color: black;
-  display: flex;
-  flex-direction: row;
+  @include horizontalList(0);
   align-items: center;
 
-
-  -webkit-box-shadow: 0 6px 4px -4px #1e1e1e;
-  -moz-box-shadow: 0 6px 4px -4px #1e1e1e;
-  box-shadow: 0 6px 4px -4px #1e1e1e;
+  @include shadow(0, 6px, 4px, -4px, #1e1e1e);
 }
 
-.top{
+.top {
   height: $headerHeight;
-  display: flex;
-  flex-direction: row;
+  @include horizontalList(0);
   justify-content: left;
   align-items: center;
 }
 
-.menu{
+.menu {
   color: white;
   display: none;
 }
 
-.logo{
+.logo {
   padding: 1rem;
   height: $headerHeight;
 }
 
-img{
+img {
   height: 100%;
 }
 
-.expanding-content{
+.expanding-content {
   margin-left: auto;
 }
 
@@ -44,21 +40,19 @@ img{
   color: #dadada;
 }
 
-.menu-item{
+.menu-item {
   height: $headerHeight;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flexCenter;
   padding: 1rem;
   cursor: pointer;
 }
 
-.menu-item:hover{
+.menu-item:hover {
   color: white;
 }
 
-.menu-item > *{
-  animation-name: fade-in;
+.menu-item > * {
+  animation-name: menu-item-fade-in;
   animation-duration: 0.5s;
 
   opacity: 0;
@@ -66,47 +60,33 @@ img{
   animation-fill-mode: forwards;
 }
 
-.menu-items .menu-item:nth-child(1) > *{
-  animation-delay: 0s;
+@for $i from 2 through 4 {
+  .menu-items .menu-item:nth-child(#{$i}) > * {
+    animation-delay: 0s + (0.1s * ($i - 1));
+  }
 }
 
-.menu-items .menu-item:nth-child(2) > *{
-  animation-delay: 0.1s;
-}
-
-.menu-items .menu-item:nth-child(3) > *{
-  animation-delay: 0.2s;
-}
-
-.menu-items .menu-item:nth-child(4) > *{
-  animation-delay: 0.3s;
-}
-
-@keyframes fade-in {
-  0%{
+@keyframes menu-item-fade-in {
+  0% {
     opacity: 0;
     transform: translateY(-30px);
   }
-  100%{
+  100% {
     opacity: 1;
     transform: none;
   }
 }
 
-html:not([data-scroll='10']) .header {
-  background-color: blue;
-}
-
 @media (max-width: 630px) {
-  .header{
+  .header {
     flex-direction: column;
   }
 
-  .expanding-content{
+  .expanding-content {
     margin-left: unset;
   }
 
-  .menu-item > *{
+  .menu-item > * {
     animation: none;
     opacity: 1;
     transform: translateY(0);
@@ -114,49 +94,46 @@ html:not([data-scroll='10']) .header {
 }
 
 @media (max-width: 440px) {
-  .expanding-content{
+  .expanding-content {
     position: absolute;
     top: $headerHeight;
     height: calc(100vh - $headerHeight);
     width: 0;
     background-color: black;
     transition: width 0.4s;
-    overflow: hidden;
-    white-space: nowrap;
+    @include disableTextWrap;
   }
 
-  .header{
+  .header {
     align-items: flex-start;
   }
 
-  .top{
+  .top {
     width: 100%;
   }
 
-  .menu{
+  .menu {
     width: $headerHeight;
     height: $headerHeight;
     margin-left: auto;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flexCenter;
     cursor: pointer;
   }
 
-  .menu:hover{
+  .menu:hover {
     background-color: gray;
   }
 
-  .expanding-content.open{
+  .expanding-content.open {
     width: 100%;
   }
 
-  .menu-items{
+  .menu-items {
     flex-direction: column-reverse;
   }
 
-  .menu-item{
+  .menu-item {
     justify-content: left;
   }
 }

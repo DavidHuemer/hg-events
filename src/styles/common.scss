@@ -10,6 +10,12 @@
   transform: translateX(-50%) translateY(-50%);
 }
 
+@mixin flexCenter{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @mixin verticalList($gap: 1rem){
   display: flex;
   flex-direction: column;
@@ -20,6 +26,12 @@
   display: flex;
   flex-direction: row;
   gap: $gap;
+}
+
+@mixin shadow($inset, $offset, $blurRadius, $spreadRadius, $color){
+  -webkit-box-shadow: $inset $offset $blurRadius $spreadRadius $color;
+  -moz-box-shadow: $inset $offset $blurRadius $spreadRadius $color;
+  box-shadow: $inset $offset $blurRadius $spreadRadius $color;
 }
 
 @keyframes fade-in {

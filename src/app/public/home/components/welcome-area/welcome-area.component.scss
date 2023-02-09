@@ -26,6 +26,7 @@ $mobileWidth: 300px;
 
   height: 8rem;
   @include common.disableTextWrap;
+  animation-timing-function: linear;
 }
 
 .horizontal-border {
@@ -41,6 +42,7 @@ $mobileWidth: 300px;
   animation-delay: $horizontalAnimationDuration;
   animation-duration: $secondAnimationDuration;
   animation-fill-mode: forwards;
+  animation-timing-function: linear;
 
   @include common.disableTextWrap();
 }
