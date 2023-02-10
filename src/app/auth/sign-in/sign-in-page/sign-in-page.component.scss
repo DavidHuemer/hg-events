@@ -1,0 +1,64 @@
+@use "~src/styles/common";
+
+$padding: 1rem;
+
+.auth-page {
+  @include common.flexCenter;
+  background-color: #4158D0;
+  background-image: linear-gradient(43deg, #3867d6 0%, #a55eea 46%, #fa8231 100%);
+}
+
+.auth-card {
+  background-color: white;
+  border-right: 1rem;
+  border-radius: 1rem;
+  overflow: hidden;
+
+  width: 400px;
+}
+
+.auth-card-content{
+  @include common.verticalList(1rem);
+}
+
+h1 {
+  padding: 0;
+  margin: $padding 0 0 0;
+  text-align: center;
+}
+
+.inputs {
+  @include common.verticalList(1rem);
+  padding: 0 $padding;
+}
+
+.auth-footer {
+  padding: $padding;
+  background-color: #4b6584;
+  color: #d1d8e0;
+
+  white-space: break-spaces;
+  margin-top: $padding;
+}
+
+.exit {
+  align-self: flex-start;
+}
+
+@media (max-width: 450px) {
+  .auth-card {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .auth-card-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}

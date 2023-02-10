@@ -1,0 +1,30 @@
+<div class="full-page auth-page">
+  <div class="auth-card">
+    <div class="auth-card-content">
+      <h1>Anmelden</h1>
+      <div class="inputs" [formGroup]="signInForm">
+        <mat-form-field appearance="standard">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email">
+        </mat-form-field>
+
+        <mat-form-field appearance="standard">
+          <mat-label>Passwort</mat-label>
+          <input matInput formControlName="password" type="password">
+        </mat-form-field>
+
+        <button mat-raised-button color="primary"
+                [disabled]="!signInForm.valid"
+                (click)="signIn()">
+          Anmelden
+        </button>
+
+        <button mat-raised-button class="exit" routerLink="/">Zurück zur Startseite</button>
+      </div>
+    </div>
+
+    <div class="auth-footer">
+      <span>Hinweis: Der interne Bereich ist nur für Mitglieder von H&G-Events vorgesehen</span>
+    </div>
+  </div>
+</div>
