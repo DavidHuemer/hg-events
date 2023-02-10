@@ -1,0 +1,21 @@
+@use "~src/styles/common";
+
+$headerHeight: 4rem;
+
+.admin-header {
+  width: 100%;
+  height: 4rem;
+  background-color: white;
+  @include common.horizontalList(0);
+}
+
+.menu-toggle {
+  height: $headerHeight;
+  width: $headerHeight;
+  @include common.flexCenter;
+  cursor: pointer;
+
+  &:hover {
+    background-color: lightgray;
+  }
+}
