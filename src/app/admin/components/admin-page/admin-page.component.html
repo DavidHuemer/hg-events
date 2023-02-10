@@ -1,0 +1,12 @@
+<div class="admin-full-page">
+  <div class="side-menu">
+    <app-admin-menu [showMenu]="showMenu"></app-admin-menu>
+  </div>
+
+  <div class="main">
+    <app-admin-header (toggleMenu)="menuToggled()"></app-admin-header>
+    <div class="main-content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

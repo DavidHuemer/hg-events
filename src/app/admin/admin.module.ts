@@ -2,13 +2,24 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
 import {AdminRoutingModule} from './admin-routing.module';
+import {AdminPageComponent} from "./components/admin-page/admin-page.component";
+import { AdminMenuComponent } from './components/admin-menu/admin-menu.component';
+import {MatIconModule} from "@angular/material/icon";
+import { AdminHeaderComponent } from './components/admin-header/admin-header.component';
+import { AdminMenuItemComponent } from './components/admin-menu-item/admin-menu-item.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    AdminPageComponent,
+    AdminMenuComponent,
+    AdminHeaderComponent,
+    AdminMenuItemComponent
+  ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    MatIconModule
   ]
 })
 export class AdminModule {
