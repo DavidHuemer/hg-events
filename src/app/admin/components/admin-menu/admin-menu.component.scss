@@ -1,0 +1,30 @@
+@import "~src/styles/variables";
+@import "~src/styles/common";
+@import "~src/app/admin/styles/adminVariables";
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.side-menu {
+  height: 100%;
+  width: $menuWidth;
+  background: $menuBackgroundColor;
+  padding: 6px 14px;
+  z-index: 99;
+  transition: all $menuAnimationTime ease;
+
+  color: white;
+
+  &.show {
+    width: $openMenuWidth;
+  }
+}
+
+.logo-container {
+  height: 60px;
+  @include flexCenter;
+  @include disableTextWrap;
+}
+
+.menu-items {
+  @include verticalList(0);
+}

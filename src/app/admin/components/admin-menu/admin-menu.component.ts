@@ -1,0 +1,17 @@
+import {Component, Input, OnInit} from '@angular/core';
+
+@Component({
+  selector: 'app-admin-menu',
+  templateUrl: './admin-menu.component.html',
+  styleUrls: ['./admin-menu.component.scss']
+})
+export class AdminMenuComponent implements OnInit {
+
+  @Input() showMenu : boolean = false;
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}

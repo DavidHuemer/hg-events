@@ -1,0 +1,73 @@
+@import "~src/app/admin/styles/adminVariables";
+@import "~src/styles/common";
+
+$iconSize: 50px;
+$borderRadius: 12px;
+$fontSize: 15px;
+
+.menu-item {
+  position: relative;
+}
+
+.icon {
+  color: white;
+  height: $iconSize;
+  line-height: $iconSize;
+  font-size: 18px;
+  min-width: $iconSize;
+  text-align: center;
+}
+
+.menu-item > * {
+  display: flex;
+  height: 100%;
+  border-radius: $borderRadius;
+  align-items: center;
+  text-decoration: none;
+}
+
+.menu-item > a {
+  &:hover {
+    background: lighten($menuBackgroundColor, 10%);
+  }
+}
+
+.links_name {
+  color: $light-background-color;
+  font-size: $fontSize;
+  font-weight: 400;
+  @include disableTextWrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: $menuAnimationTime;
+
+  &.expand {
+    opacity: 1;
+  }
+}
+
+.tooltip {
+  position: absolute;
+  left: calc(100% + $fontSize);
+  margin-left: 1rem;
+  z-index: 3;
+  background: #fff;
+  padding: 6px $borderRadius;
+  font-size: $fontSize;
+  font-weight: 400;
+  opacity: 0;
+  white-space: nowrap;
+  pointer-events: none;
+  color: black;
+  width: auto;
+
+  top: 50%;
+  transform: translateY(-50%);
+
+  transition: none;
+}
+
+.menu-item:hover .tooltip.allowed {
+  opacity: 1;
+  pointer-events: auto;
+}

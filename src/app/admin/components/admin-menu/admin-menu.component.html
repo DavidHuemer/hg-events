@@ -1,0 +1,32 @@
+<div class="side-menu" [ngClass]="{'show':showMenu}">
+  <div class="logo-container">
+    <div class="short" *ngIf="!showMenu">H&G</div>
+    <div class="logo_name" *ngIf="showMenu">H&G-Events</div>
+  </div>
+
+  <div class="menu-items">
+    <app-admin-menu-item title="Dashboard"
+                         icon="home"
+                         link="./dashboard"
+                         [expand]="showMenu">
+    </app-admin-menu-item>
+
+    <app-admin-menu-item title="Gästebuch"
+                         icon="book"
+                         link="./guestbook"
+                         [expand]="showMenu">
+    </app-admin-menu-item>
+
+    <app-admin-menu-item title="Equipment"
+                         icon="speaker"
+                         link="./equipment"
+                         [expand]="showMenu">
+    </app-admin-menu-item>
+
+    <app-admin-menu-item title="Abmelden"
+                         icon="logout"
+                         link="#"
+                         [expand]="showMenu">
+    </app-admin-menu-item>
+  </div>
+</div>
