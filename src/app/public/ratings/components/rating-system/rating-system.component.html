@@ -1,0 +1,17 @@
+<div class="rating-system" (mouseleave)="ratingExited()">
+  <div class="rating" *ngFor="let number of numbers"
+       (click)="ratingClicked(number)" (mouseover)="starMouseOver(number)">
+    <div class="star">
+      <mat-icon *ngIf="number > currentMaxNumber">star_outline</mat-icon>
+      <mat-icon *ngIf="number <= currentMaxNumber">star</mat-icon>
+    </div>
+
+    <div class="number">
+      {{number}}
+    </div>
+
+    <div class="underline">
+
+    </div>
+  </div>
+</div>
