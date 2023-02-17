@@ -1,0 +1,5 @@
+<div class="rating-visualization">
+  <div class="rating" *ngFor="let number of numbers">
+    <app-rating-star [rated]="number <= rating"></app-rating-star>
+  </div>
+</div>
