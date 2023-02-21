@@ -1,0 +1,12 @@
+<div class="rating" *ngIf="rating">
+  <div class="infos">
+    <span>{{rating.autor}}</span>
+    <span>{{rating.date.toDate() | date:"dd.MM.YYYY"}}</span>
+  </div>
+
+  <div class="content">
+    <span class="title">{{rating.title}}</span>
+    <app-rating-visualization [rating]="rating.rating"></app-rating-visualization>
+    <span class="message">{{rating.message}}</span>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+@use "~src/styles/common";
+
+.rating{
+  @include common.horizontalList(1rem);
+}
+
+.infos{
+  @include common.verticalList(0);
+}
+
+.content{
+  @include common.verticalList(0);
+}
+
+.title{
+  font-weight: bold;
+}
