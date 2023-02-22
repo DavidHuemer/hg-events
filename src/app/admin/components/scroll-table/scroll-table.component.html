@@ -1,0 +1,13 @@
+<div class="scroll-table">
+  <div class="header">
+    <div class="header-item" *ngFor="let header of headers">
+      {{header}}
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="body">
+    <ng-content></ng-content>
+  </div>
+</div>

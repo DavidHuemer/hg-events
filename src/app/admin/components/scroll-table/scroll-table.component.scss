@@ -1,0 +1,26 @@
+.scroll-table{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.header{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.header-item{
+  width: 100%;
+  font-weight: bold;
+  padding: 0.5rem 0;
+}
+
+.body{
+  height: 100%;
+  overflow: auto;
+}
+
+hr{
+  margin: 0;
+}
