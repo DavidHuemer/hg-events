@@ -10,9 +10,10 @@
           <div>{{rating.title}}</div>
           <div>{{rating.rating}}</div>
           <div>{{rating.message}}</div>
-
           <div>
-            <app-action-buttons></app-action-buttons>
+            <app-action-buttons (edit)="edit(rating.id)">
+
+            </app-action-buttons>
           </div>
         </div>
       </app-scroll-table>
