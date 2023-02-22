@@ -1,0 +1,9 @@
+<div class="loadable-container">
+  <div *ngIf="!isLoading" class="content">
+    <ng-content></ng-content>
+  </div>
+
+  <div *ngIf="isLoading" class="loading">
+    <app-loading></app-loading>
+  </div>
+</div>

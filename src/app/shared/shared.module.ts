@@ -7,6 +7,8 @@ import {RatingVisualizationComponent} from './components/rating/rating-visualiza
 import {MatIconModule} from "@angular/material/icon";
 import {SaveCancelButtonsComponent} from './components/save-cancel-buttons/save-cancel-buttons.component';
 import {MatButtonModule} from "@angular/material/button";
+import {LoadableContainerComponent} from './components/loadable-container/loadable-container.component';
+import {LoadingComponent} from './components/loading/loading.component';
 
 
 @NgModule({
@@ -14,12 +16,15 @@ import {MatButtonModule} from "@angular/material/button";
     LoadableListComponent,
     RatingStarComponent,
     RatingVisualizationComponent,
-    SaveCancelButtonsComponent
+    SaveCancelButtonsComponent,
+    LoadableContainerComponent,
+    LoadingComponent
   ],
   exports: [
     LoadableListComponent,
     RatingVisualizationComponent,
-    SaveCancelButtonsComponent
+    SaveCancelButtonsComponent,
+    LoadableContainerComponent
   ],
   imports: [
     CommonModule,
