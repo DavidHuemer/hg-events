@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {Rating} from "../../../../core/models/rating";
+import {RatingDto} from "../../../../core/models/rating";
 import {Timestamp} from "@angular/fire/firestore";
 import {RatingsService} from "../../../../core/services/ratings/ratings.service";
 import {ActivatedRoute, Router} from "@angular/router";
@@ -33,7 +33,7 @@ export class NewRatingPageComponent implements OnInit {
   }
 
   async addRating(){
-    const rating : Rating = {
+    const rating : RatingDto = {
       autor: this.autorForm.value,
       title: this.titleForm.value,
       message: this.messageForm.value,

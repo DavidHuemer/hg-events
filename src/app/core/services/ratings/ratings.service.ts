@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {addDoc, collection, collectionData, Firestore} from "@angular/fire/firestore";
 import {map, Observable} from "rxjs";
-import {Rating} from "../../models/rating";
+import {Rating, RatingDto} from "../../models/rating";
 
 @Injectable({
   providedIn: 'root'
@@ -13,16 +13,15 @@ export class RatingsService {
 
   public getRatings(): Observable<Rating[]> {
     const coll = this.getCollection();
-    const x = collectionData(coll);
-    return x.pipe(
-      map(documentDataArr => {
-        return documentDataArr.map(documentData => documentData as Rating);
-      }),
-      map(ratings => ratings.sort((a,b) => b.date.seconds - a.date.seconds))
+
+    const ratingsObs = collectionData(coll, {idField: 'id'}) as Observable<Rating[]>;
+
+    return ratingsObs.pipe(
+      map(ratings => ratings.sort((a, b) => b.date.seconds - a.date.seconds))
     );
   }
 
-  addRating(rating: Rating) {
+  addRating(rating: RatingDto) {
     const ratingsRef = this.getCollection();
     return addDoc(ratingsRef, rating);
   }
