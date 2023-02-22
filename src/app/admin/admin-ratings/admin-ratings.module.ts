@@ -1,11 +1,14 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { AdminRatingsRoutingModule } from './admin-ratings-routing.module';
-import { AdminRatingsPageComponent } from './pages/admin-ratings-page/admin-ratings-page.component';
+import {AdminRatingsRoutingModule} from './admin-ratings-routing.module';
+import {AdminRatingsPageComponent} from './pages/admin-ratings-page/admin-ratings-page.component';
 import {ScrollTableComponent} from "../components/scroll-table/scroll-table.component";
 import {AdminModule} from "../admin.module";
-import { EditRatingAdminPageComponent } from './pages/edit-rating-admin-page/edit-rating-admin-page.component';
+import {EditRatingAdminPageComponent} from './pages/edit-rating-admin-page/edit-rating-admin-page.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {MatButtonModule} from "@angular/material/button";
 
 
 @NgModule({
@@ -17,7 +20,10 @@ import { EditRatingAdminPageComponent } from './pages/edit-rating-admin-page/edi
   imports: [
     CommonModule,
     AdminRatingsRoutingModule,
-    AdminModule
+    AdminModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule
   ]
 })
 export class AdminRatingsModule { }

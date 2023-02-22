@@ -1,0 +1,7 @@
+@import "~src/styles/common";
+
+.edit-rating {
+  @include verticalList(1rem);
+  align-items: flex-start;
+  padding: 1rem;
+}
