@@ -63,6 +63,9 @@ $mobileWidth: 300px;
   animation-duration: $secondAnimationDuration;
   animation-delay: $horizontalAnimationDuration;
   opacity: 0;
+
+  background-color: #c0392b;
+  color: white;
 }
 
 @keyframes text-container-border {
