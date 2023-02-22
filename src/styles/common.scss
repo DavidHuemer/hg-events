@@ -28,17 +28,27 @@
   gap: $gap;
 }
 
-@mixin shadow($inset, $offset, $blurRadius, $spreadRadius, $color){
+@mixin shadow($inset, $offset, $blurRadius, $spreadRadius, $color) {
   -webkit-box-shadow: $inset $offset $blurRadius $spreadRadius $color;
   -moz-box-shadow: $inset $offset $blurRadius $spreadRadius $color;
   box-shadow: $inset $offset $blurRadius $spreadRadius $color;
+}
+
+@mixin link($color, $highlightPercentage: 10%) {
+  color: $color;
+  text-decoration: none;
+
+  &:hover {
+    color: lighten($color, $highlightPercentage);
+    text-decoration: underline;
+  }
 }
 
 @keyframes fade-in {
   0% {
     opacity: 0;
   }
-  100%{
+  100% {
     opacity: 1;
   }
 }
