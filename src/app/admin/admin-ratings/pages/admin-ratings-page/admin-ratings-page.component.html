@@ -1,1 +1,21 @@
-<p>admin-ratings-page works!</p>
+<div class="dashboard-page">
+
+  <div class="dashboard-card full">
+    <h1>Gästebucheinträge</h1>
+
+    <div class="ratings">
+      <app-scroll-table [headers]="headers">
+        <div class="table-row" *ngFor="let rating of ratings$ | async">
+          <div>{{rating.autor}}</div>
+          <div>{{rating.title}}</div>
+          <div>{{rating.rating}}</div>
+          <div>{{rating.message}}</div>
+
+          <div>
+            <app-action-buttons></app-action-buttons>
+          </div>
+        </div>
+      </app-scroll-table>
+    </div>
+  </div>
+</div>

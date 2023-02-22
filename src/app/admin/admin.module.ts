@@ -7,19 +7,26 @@ import { AdminMenuComponent } from './components/admin-menu/admin-menu.component
 import {MatIconModule} from "@angular/material/icon";
 import { AdminHeaderComponent } from './components/admin-header/admin-header.component';
 import { AdminMenuItemComponent } from './components/admin-menu-item/admin-menu-item.component';
+import { ActionButtonsComponent } from './components/action-buttons/action-buttons.component';
+import {MatButtonModule} from "@angular/material/button";
 
 
 @NgModule({
-  declarations: [
-    AdminPageComponent,
-    AdminMenuComponent,
-    AdminHeaderComponent,
-    AdminMenuItemComponent
-  ],
+    declarations: [
+        AdminPageComponent,
+        AdminMenuComponent,
+        AdminHeaderComponent,
+        AdminMenuItemComponent,
+        ActionButtonsComponent
+    ],
+    exports: [
+        ActionButtonsComponent
+    ],
   imports: [
     CommonModule,
     AdminRoutingModule,
-    MatIconModule
+    MatIconModule,
+    MatButtonModule
   ]
 })
 export class AdminModule {
