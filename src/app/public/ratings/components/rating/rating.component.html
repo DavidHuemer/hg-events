@@ -6,7 +6,7 @@
 
   <div class="content">
     <span class="title">{{rating.title}}</span>
-    <app-rating-visualization [rating]="rating.rating"></app-rating-visualization>
+    <app-rating-visualization [rating]="rating.rating" *ngIf="rating.rating > 0"></app-rating-visualization>
     <span class="message">{{rating.message}}</span>
   </div>
 </div>
