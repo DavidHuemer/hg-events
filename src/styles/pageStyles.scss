@@ -10,3 +10,9 @@
   margin-top: $headerHeight;
   padding: 1rem;
 }
+
+.dashboard-page{
+  height: calc(100vh - $headerHeight);
+  overflow-y: auto;
+  padding: 1rem;
+}
