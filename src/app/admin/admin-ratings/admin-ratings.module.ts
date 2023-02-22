@@ -9,6 +9,8 @@ import {EditRatingAdminPageComponent} from './pages/edit-rating-admin-page/edit-
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
+import {SharedModule} from "../../shared/shared.module";
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import {MatButtonModule} from "@angular/material/button";
     AdminModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    SharedModule,
+    ReactiveFormsModule
   ]
 })
 export class AdminRatingsModule { }
