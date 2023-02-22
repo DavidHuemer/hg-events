@@ -1,0 +1,5 @@
+@import "~src/styles/common";
+
+.action-buttons {
+  @include horizontalList(1rem);
+}
