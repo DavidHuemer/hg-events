@@ -1,0 +1,31 @@
+@use "~src/styles/common";
+
+.public-page{
+  display: flex;
+  justify-content: center;
+}
+
+.new-rating{
+  @include common.verticalList(1rem);
+  width: 500px;
+}
+
+h1{
+  margin: 0;
+}
+
+.rating{
+  background-color: #f5f5f5;
+  border: 1px solid gray;
+  padding: 1rem;
+
+  @include common.verticalList(1rem)
+}
+
+.rating-system{
+  display: none;
+}
+
+.rating-system.show{
+  display: unset;
+}

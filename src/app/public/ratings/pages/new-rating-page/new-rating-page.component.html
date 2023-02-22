@@ -1,0 +1,32 @@
+<div class="public-page">
+  <div class="new-rating">
+    <h1>Neuen Gästebucheintrag hinzufügen</h1>
+
+    <mat-form-field>
+      <mat-label>Autor</mat-label>
+      <input matInput type="text" [formControl]="autorForm">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Titel</mat-label>
+      <input matInput type="text" [formControl]="titleForm">
+    </mat-form-field>
+
+    <div class="rating">
+      <mat-slide-toggle [(ngModel)]="ratingEnabled">Bewertung abgeben</mat-slide-toggle>
+
+      <div class="rating-system" [ngClass]="{'show': ratingEnabled}">
+        <app-rating-system (ratingChanged)="ratingNumber = $event"></app-rating-system>
+      </div>
+    </div>
+
+    <mat-form-field>
+      <mat-label>Nachricht</mat-label>
+      <input matInput type="text" [formControl]="messageForm">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" [disabled]="!newRatingFormGroup.valid" (click)="addRating()">
+      Hinzufügen
+    </button>
+  </div>
+</div>
