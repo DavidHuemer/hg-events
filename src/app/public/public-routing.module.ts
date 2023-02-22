@@ -7,7 +7,8 @@ const routes: Routes = [
   {
     path: '', component: PublicPageComponent, children: [
       {path: '', loadChildren: () => import('./home/home.module').then(m => m.HomeModule)},
-      {path: 'equipments', component: EquipmentsPageComponent}
+      {path: 'equipments', component: EquipmentsPageComponent},
+      {path: 'ratings', loadChildren: () => import('./ratings/ratings.module').then(m => m.RatingsModule)}
     ]
   }
 ];

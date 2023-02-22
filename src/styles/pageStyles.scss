@@ -1,4 +1,12 @@
+@import "variables";
+
 .full-page{
   width: 100%;
   min-height: 100vh;
+}
+
+.public-page{
+  width: 100%;
+  margin-top: $headerHeight;
+  padding: 1rem;
 }

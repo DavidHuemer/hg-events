@@ -1,0 +1,22 @@
+<div class="public-page">
+  <div class="content">
+    <div class="top">
+      <button mat-raised-button routerLink="./new">Neuen Gästebucheintrag hinzufügen</button>
+    </div>
+
+    <hr>
+
+    <div class="ratings" *rxLet="status$; let status">
+      <app-loadable-list [status]="status">
+        <div class="listContent" *rxLet="ratings$; let ratings">
+          <div class="rating" *ngFor="let rating of ratings$ | async">
+            <app-rating [rating]="rating">
+
+            </app-rating>
+            <hr>
+          </div>
+        </div>
+      </app-loadable-list>
+    </div>
+  </div>
+</div>

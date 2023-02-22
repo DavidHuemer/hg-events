@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-rating-system',
@@ -6,6 +6,8 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./rating-system.component.scss']
 })
 export class RatingSystemComponent implements OnInit {
+
+  @Output() ratingChanged: EventEmitter<number> = new EventEmitter<number>();
 
   numbers: number[] = [1, 2, 3, 4, 5];
 
@@ -25,6 +27,8 @@ export class RatingSystemComponent implements OnInit {
   ratingClicked(number: number) {
     this.currentMaxNumber = number;
     this.maxNumber = number;
+
+    this.ratingChanged?.emit(number);
   }
 
   ratingExited() {
