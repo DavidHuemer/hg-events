@@ -3,15 +3,21 @@ import {CommonModule} from '@angular/common';
 
 import {EquipmentsRoutingModule} from './equipments-routing.module';
 import {EquipmentsPageComponent} from './pages/equipments-page/equipments-page.component';
+import {SharedModule} from "../../shared/shared.module";
+import {LetModule} from "@rx-angular/template/let";
+import {EquipmentComponent} from './components/equipment/equipment.component';
 
 
 @NgModule({
   declarations: [
-    EquipmentsPageComponent
+    EquipmentsPageComponent,
+    EquipmentComponent
   ],
   imports: [
     CommonModule,
-    EquipmentsRoutingModule
+    EquipmentsRoutingModule,
+    SharedModule,
+    LetModule
   ]
 })
 export class EquipmentsModule {

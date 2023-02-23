@@ -1,1 +1,16 @@
-<p>equipments-page works!</p>
+<div class="public-page">
+  <div class="equipments">
+    <h1>Equipments</h1>
+    <p>Ein Ausschnitt aus unserem Equipment</p>
+    <div *rxLet="status$; let status" class="equipmentsList">
+      <app-loadable-list [status]="status">
+        <div *rxLet="content$; let equipments" class="listContent">
+          <div *ngFor="let equipment of equipments" class="equipment">
+            <app-equipment [equipment]="equipment"></app-equipment>
+            <hr>
+          </div>
+        </div>
+      </app-loadable-list>
+    </div>
+  </div>
+</div>

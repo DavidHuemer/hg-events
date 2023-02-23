@@ -1,24 +1,20 @@
-import { Injectable } from '@angular/core';
-import {Firestore, collection, collectionData} from "@angular/fire/firestore";
-import {map, Observable} from "rxjs";
+import {Injectable} from '@angular/core';
+import {collection, collectionData, Firestore} from "@angular/fire/firestore";
+import {Observable} from "rxjs";
 import {Equipment} from "../../models/equipment";
+import {BaseFirebaseService} from "../basics/BaseFirebaseService";
 
 @Injectable({
   providedIn: 'root'
 })
-export class EquipmentsService {
+export class EquipmentsService extends BaseFirebaseService<Equipment, Equipment> {
 
-  constructor(private firestore : Firestore) {
-
+  constructor(firestore: Firestore) {
+    super(firestore, 'equipment');
   }
 
-  public getEquipments() : Observable<Equipment[]>{
+  public getEquipments(): Observable<Equipment[]> {
     const coll = collection(this.firestore, 'equipment');
-    const x = collectionData(coll);
-    return x.pipe(
-      map(documentDataArr => {
-        return documentDataArr.map(documentData => documentData as Equipment);
-      })
-    );
+    return collectionData(coll, {idField: 'id'}) as Observable<Equipment[]>;
   }
 }
