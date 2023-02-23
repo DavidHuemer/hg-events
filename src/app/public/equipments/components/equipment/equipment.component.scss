@@ -1,0 +1,27 @@
+@import "src/styles/common";
+
+$imageWidth: 200px;
+
+.equipment {
+  @include horizontalList(1rem);
+  padding: 1rem;
+}
+
+.image {
+  width: $imageWidth;
+  height: $imageWidth;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content {
+  @include verticalList(1rem);
+}
+
+h2 {
+  margin: 0;
+}

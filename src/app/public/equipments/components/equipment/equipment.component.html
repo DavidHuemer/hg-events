@@ -1,0 +1,13 @@
+<div *ngIf="loadedEquipment" class="equipment">
+  <div class="image">
+    <img [src]="imgUrl" alt="Equipment">
+  </div>
+
+  <div class="content">
+    <h2>{{loadedEquipment.name}}</h2>
+
+    <div>
+      {{loadedEquipment.detail}}
+    </div>
+  </div>
+</div>
