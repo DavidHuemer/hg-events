@@ -1,28 +1,28 @@
-@mixin disableTextWrap{
+@mixin disableTextWrap {
   white-space: nowrap;
   overflow: hidden;
 }
 
-@mixin translateCenter{
+@mixin translateCenter {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translateX(-50%) translateY(-50%);
 }
 
-@mixin flexCenter{
+@mixin flexCenter {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-@mixin verticalList($gap: 1rem){
+@mixin verticalList($gap: 1rem) {
   display: flex;
   flex-direction: column;
   gap: $gap;
 }
 
-@mixin horizontalList($gap: 1rem){
+@mixin horizontalList($gap: 1rem) {
   display: flex;
   flex-direction: row;
   gap: $gap;
@@ -42,6 +42,16 @@
     color: lighten($color, $highlightPercentage);
     text-decoration: underline;
   }
+}
+
+@mixin verticalBorder($color) {
+  border-left: 1px solid $color;
+  border-right: 1px solid $color;
+}
+
+@mixin horizontalBorder($color) {
+  border-top: 1px solid $color;
+  border-bottom: 1px solid $color;
 }
 
 @keyframes fade-in {
