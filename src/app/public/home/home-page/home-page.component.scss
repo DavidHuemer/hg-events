@@ -1,24 +1,6 @@
-@use "src/styles/common";
-
-$horizontalAnimationDuration: 1s;
-$secondAnimationDuration: 1s;
-
-.image-container {
-  width: 100%;
-  height: 100vh;
-
-  background-image: url("~src/assets/images/mischpult_closeup_wide.jpg");
-  background-color: black;
-  background-size: cover;
-  position: relative;
-}
-
-.center {
-  @include common.translateCenter;
-}
+@import "src/styles/common";
 
 .main-content {
-  display: flex;
-  flex-direction: column;
+  @include verticalList(1rem);
   align-items: center;
 }
