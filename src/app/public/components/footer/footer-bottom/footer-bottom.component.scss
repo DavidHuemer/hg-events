@@ -1,0 +1,9 @@
+@import "src/styles/variables";
+
+.footer-bottom {
+  background-color: $darkColorDark;
+  color: $lightColorLight;
+  text-align: center;
+
+  padding: 0.5rem;
+}

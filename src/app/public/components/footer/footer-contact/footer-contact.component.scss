@@ -1,0 +1,14 @@
+@import "src/styles/common";
+@import "src/styles/variables";
+
+.contact {
+  @include verticalList(1rem);
+}
+
+.contact-item {
+  @include horizontalList(1rem);
+}
+
+a {
+  @include link($highlight1Light, 10%);
+}

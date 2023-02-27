@@ -1,0 +1,51 @@
+@import url(https://use.fontawesome.com/releases/v5.4.1/css/all.css);
+@import "src/styles/common";
+@import "src/styles/variables";
+
+.footer {
+  width: 100%;
+  @include verticalList(0);
+  margin-top: auto;
+  color: $lightColorLight;
+}
+
+.content {
+  background: $darkColorLight;
+  @include horizontalList(0);
+  padding: 1rem;
+}
+
+.column {
+  width: 100%;
+  @include verticalList(0);
+  padding: 1rem;
+}
+
+.column:nth-child(2) {
+  @include verticalBorder($lightColorDark);
+}
+
+h2 {
+  text-align: center;
+  color: $lightColorLight;
+}
+
+@media (max-width: 1100px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .contact {
+    align-self: center;
+  }
+
+  .column:nth-child(2) {
+    @include horizontalBorder($lightColorDark);
+    border-left: none;
+    border-right: none;
+  }
+
+  h2 {
+    text-decoration: underline;
+  }
+}
