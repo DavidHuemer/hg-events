@@ -1,0 +1,75 @@
+@import "src/styles/variables";
+@import "src/styles/common";
+@import "src/app/public/styles/headerStyles";
+
+.header {
+  background-color: black;
+  @include horizontalList(0);
+  align-items: center;
+
+  @include shadow(0, 6px, 4px, -4px, #1e1e1e);
+}
+
+.top {
+  height: $headerHeight;
+  @include horizontalList(0);
+  justify-content: left;
+  align-items: stretch;
+}
+
+.navigation {
+  margin-left: auto;
+}
+
+.menu {
+  color: $lightColorLight;
+  display: none;
+}
+
+.menu:hover {
+  background-color: gray;
+}
+
+@media (max-width: $headerRearrange1) {
+  .header {
+    flex-direction: column;
+  }
+
+  .navigation {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+@media (max-width: $headerRearrange2) {
+  .navigation {
+    position: absolute;
+    top: $headerHeight;
+    height: calc(100vh - $headerHeight);
+    width: 0;
+    background-color: black;
+    transition: width 0.4s;
+    @include disableTextWrap;
+  }
+
+  .header {
+    align-items: flex-start;
+  }
+
+  .top {
+    width: 100%;
+  }
+
+  .menu {
+    width: $headerHeight;
+    height: $headerHeight;
+    margin-left: auto;
+
+    @include flexCenter;
+    cursor: pointer;
+  }
+
+  .navigation.open {
+    width: 100%;
+  }
+}

@@ -1,0 +1,13 @@
+<div class="header">
+  <div class="top">
+    <app-header-logo></app-header-logo>
+
+    <div class="menu" (click)="toggle()">
+      <mat-icon>menu</mat-icon>
+    </div>
+  </div>
+
+  <div [ngClass]="{'open': show}" class="navigation">
+    <app-public-navigation></app-public-navigation>
+  </div>
+</div>

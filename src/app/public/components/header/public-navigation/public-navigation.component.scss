@@ -1,0 +1,63 @@
+@import "src/styles/variables";
+@import "src/styles/common";
+@import "src/app/public/styles/headerStyles";
+
+.navigation {
+  display: flex;
+  flex-direction: row-reverse;
+  color: $lightColorLight;
+}
+
+.menu-item {
+  height: $headerHeight;
+  @include flexCenter;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  color: white;
+}
+
+.menu-item > * {
+  animation-name: menu-item-fade-in;
+  animation-duration: 0.5s;
+
+  opacity: 0;
+  transform: translateY(-30px);
+  animation-fill-mode: forwards;
+}
+
+@for $i from 2 through 4 {
+  .menu-items .menu-item:nth-child(#{$i}) > * {
+    animation-delay: 0s + (0.1s * ($i - 1));
+  }
+}
+
+@keyframes menu-item-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: $headerRearrange1) {
+  .navigation {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: $headerRearrange2) {
+  .navigation {
+    flex-direction: column-reverse;
+  }
+
+  .menu-item {
+    justify-content: left;
+  }
+}

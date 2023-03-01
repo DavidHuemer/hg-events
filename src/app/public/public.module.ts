@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
 import {PublicRoutingModule} from './public-routing.module';
-import {HeaderComponent} from './components/header/header.component';
+import {HeaderComponent} from './components/header/header/header.component';
 import {FooterComponent} from './components/footer/footer/footer.component';
 import {MatIconModule} from "@angular/material/icon";
 import {PublicPageComponent} from './pages/public-page/public-page.component';
@@ -14,6 +14,8 @@ import {SocialMediaButtonComponent} from './components/social-media-button/socia
 import {FooterBottomComponent} from './components/footer/footer-bottom/footer-bottom.component';
 import {FooterContactComponent} from './components/footer/footer-contact/footer-contact.component';
 import {FooterSocialMediaComponent} from './components/footer/footer-social-media/footer-social-media.component';
+import {PublicNavigationComponent} from './components/header/public-navigation/public-navigation.component';
+import {HeaderLogoComponent} from './components/header/header-logo/header-logo.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import {FooterSocialMediaComponent} from './components/footer/footer-social-medi
     SocialMediaButtonComponent,
     FooterBottomComponent,
     FooterContactComponent,
-    FooterSocialMediaComponent
+    FooterSocialMediaComponent,
+    PublicNavigationComponent,
+    HeaderLogoComponent
   ],
   imports: [
     CommonModule,
