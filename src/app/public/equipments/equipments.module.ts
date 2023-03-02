@@ -6,6 +6,7 @@ import {EquipmentsPageComponent} from './pages/equipments-page/equipments-page.c
 import {SharedModule} from "../../shared/shared.module";
 import {LetModule} from "@rx-angular/template/let";
 import {EquipmentComponent} from './components/equipment/equipment.component';
+import {MatButtonModule} from "@angular/material/button";
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import {EquipmentComponent} from './components/equipment/equipment.component';
     CommonModule,
     EquipmentsRoutingModule,
     SharedModule,
-    LetModule
+    LetModule,
+    MatButtonModule
   ]
 })
 export class EquipmentsModule {

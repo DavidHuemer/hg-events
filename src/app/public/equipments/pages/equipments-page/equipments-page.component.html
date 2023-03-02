@@ -1,7 +1,20 @@
 <div class="public-page">
   <div class="equipments">
-    <h1>Equipments</h1>
-    <p>Ein Ausschnitt aus unserem Equipment</p>
+    <h1>Equipment</h1>
+    <p>Ein Ausschnitt aus unserer Technik</p>
+
+    <!--    <div>
+          <span>Gerne Vermieten wir auch unser Equipment. Sie können dazu die einzelnen Produkte zur Anfrage hinzufügen. </span>
+          <a routerLink="request">Anfrage</a>
+          <span> senden</span>
+        </div>-->
+
+    <p>
+      Preis nach Vereinbarung
+    </p>
+
+    <hr>
+
     <div *rxLet="status$; let status" class="equipmentsList">
       <app-loadable-list [status]="status">
         <div *rxLet="content$; let equipments" class="listContent">

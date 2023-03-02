@@ -1,4 +1,6 @@
 @import "src/styles/common";
+@import "src/styles/variables";
+@import "../../styles/equipmentStyles";
 
 $imageWidth: 200px;
 
@@ -24,4 +26,36 @@ img {
 
 h2 {
   margin: 0;
+}
+
+.buttons {
+  margin-top: auto;
+  @include horizontalList(1rem);
+}
+
+.add-request {
+  background: $highLight2Dark;
+  color: white;
+}
+
+@media (max-width: $equipmentsRearrangeWidth) {
+  .equipment {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .buttons {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: $equipmentsRearrangeWidth2) {
+  .buttons {
+    flex-direction: column;
+  }
 }

@@ -1,10 +1,29 @@
+@import "src/styles/common";
+@import "../../styles/equipmentStyles";
+
 .public-page {
   display: flex;
   justify-content: center;
 }
 
 .equipments {
-  width: 800px;
+  width: $equipmentsWidth1;
   background-color: white;
   padding: 1rem;
+}
+
+@media (max-width: $equipmentsWidth1 + 60px) {
+  .equipments {
+    width: $equipmentsWidth2;
+  }
+}
+
+@media (max-width: $equipmentsWidth2 + 60px) {
+  .equipments {
+    width: 100%;
+  }
+
+  .public-page {
+    padding: 0;
+  }
 }
