@@ -1,0 +1,14 @@
+@import "src/styles/common";
+
+.public-page {
+  display: flex;
+  justify-content: center;
+}
+
+.request {
+  width: 800px;
+}
+
+.inputs {
+  @include verticalList(1rem);
+}
