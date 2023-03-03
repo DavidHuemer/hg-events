@@ -1,0 +1,29 @@
+import {RxState} from "@rx-angular/state";
+import {Observable} from "rxjs";
+
+export interface LoadingState<T> {
+  isLoading: boolean;
+  content: T;
+}
+
+export class LoadingHandler<T> {
+  constructor(private state: RxState<LoadingState<T>>) {
+    this.state.set({isLoading: true})
+
+    state.select('content').subscribe(() => {
+      this.state.set({isLoading: false});
+    });
+  }
+
+  getIsLoading() {
+    return this.state.select('isLoading');
+  }
+
+  getContent() {
+    return this.state.select('content');
+  }
+
+  load(obs: Observable<T>) {
+    this.state.connect('content', obs);
+  }
+}
