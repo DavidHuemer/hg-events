@@ -1,0 +1,21 @@
+<div *rxLet="isLoading$; let isLoading" class="request-equipment-container">
+  <div *ngIf="isLoading" class="loading">
+    Loading
+  </div>
+
+  <div *ngIf="!isLoading" class="loaded">
+    <div *rxLet="content$; let content" class="request-equipment">
+      <div class="image">
+        <img [src]="url" alt="Equipment image">
+      </div>
+
+      <div class="name">
+        {{content.name}}
+      </div>
+
+      <div class="remove">
+        <button mat-raised-button>Entfernen</button>
+      </div>
+    </div>
+  </div>
+</div>

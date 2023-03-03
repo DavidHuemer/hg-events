@@ -1,0 +1,46 @@
+@import "src/styles/common";
+@import "src/styles/variables";
+
+$requestEquipmentHeight: 60px;
+$imageSize: $requestEquipmentHeight - 2px;
+
+.request-equipment-container {
+  border: 1px solid $lightColorLight;
+  display: flex;
+  align-items: center;
+
+  > * {
+    width: 100%;
+  }
+}
+
+
+.request-equipment-container {
+  height: $requestEquipmentHeight;
+}
+
+.request-equipment {
+  @include horizontalList(1rem);
+  align-items: center;
+}
+
+.image {
+  height: $imageSize;
+  aspect-ratio: 1/1;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.name {
+  @include disableTextWrap;
+  text-overflow: ellipsis;
+}
+
+.remove {
+  margin-left: auto;
+  margin-right: 1rem;
+}
