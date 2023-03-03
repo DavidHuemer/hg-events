@@ -9,6 +9,8 @@ import {environment} from "../environments/environment";
 import {getFirestore, provideFirestore} from "@angular/fire/firestore";
 import {getAuth, provideAuth} from "@angular/fire/auth";
 import {getStorage, provideStorage} from "@angular/fire/storage";
+import {PUBLIC_GLOBAL_RX_STATE, PublicGlobalState} from "./core/states/PublicGlobalState";
+import {RxState} from "@rx-angular/state";
 
 @NgModule({
   declarations: [
@@ -23,7 +25,11 @@ import {getStorage, provideStorage} from "@angular/fire/storage";
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage())
   ],
-  providers: [],
+  providers: [
+    {
+      provide: PUBLIC_GLOBAL_RX_STATE, useFactory: () => new RxState<PublicGlobalState>()
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
