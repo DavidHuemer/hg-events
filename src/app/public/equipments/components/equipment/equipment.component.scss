@@ -3,15 +3,24 @@
 @import "../../styles/equipmentStyles";
 
 $imageWidth: 200px;
+$buttonsHeight: 2.5rem;
 
 .equipment {
-  @include horizontalList(1rem);
+  display: grid;
+  grid-template-columns: $imageWidth auto;
+  grid-template-rows: calc($imageWidth - $buttonsHeight) $buttonsHeight;
   padding: 1rem;
 }
 
 .image {
-  width: $imageWidth;
-  height: $imageWidth;
+  grid-row-start: 1;
+  grid-row-end: 3;
+
+  grid-column-start: 1;
+  grid-column-end: 2;
+
+  width: 100%;
+  height: 100%;
 }
 
 img {
@@ -23,6 +32,14 @@ img {
 .content {
   @include verticalList(1rem);
   color: $darkColorDark;
+
+  grid-row-start: 1;
+  grid-row-end: 2;
+
+  grid-column-start: 2;
+  grid-column-end: 3;
+
+  margin-left: 1rem;
 }
 
 h2 {
@@ -32,6 +49,12 @@ h2 {
 .buttons {
   margin-top: auto;
   @include horizontalList(1rem);
+
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  margin-left: 1rem;
 }
 
 .add-request {
@@ -41,22 +64,45 @@ h2 {
 
 @media (max-width: $equipmentsRearrangeWidth) {
   .equipment {
-    flex-direction: column;
-    align-items: center;
+    grid-template-rows: $imageWidth calc($buttonsHeight + 1rem);
   }
 
-  .content {
-    width: 100%;
+  .image {
+    grid-row-start: 1;
+    grid-row-end: 2;
   }
 
   .buttons {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    margin: 1rem 0 0 0;
     width: 100%;
     justify-content: space-between;
   }
 }
 
 @media (max-width: $equipmentsRearrangeWidth2) {
+  .equipment {
+    @include verticalList();
+    align-items: center;
+  }
+
+  .image {
+    width: $imageWidth;
+    height: $imageWidth;
+  }
+
+  .content {
+    margin: 0;
+  }
+
   .buttons {
-    flex-direction: column;
+    margin: 0;
+  }
+}
+
+@media (max-width: $equipmentsRearrangeWidth3) {
+  .buttons {
+    @include verticalList(1rem);
   }
 }
