@@ -1,11 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 
+@use '@angular/material' as mat;
 @import "styles/variables";
 @import "styles/pageStyles";
 @import "styles/dashboardStyles";
 @import "styles/tableStyles";
 * {
   box-sizing: border-box;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
 }
 
 body {
