@@ -1,0 +1,11 @@
+@import "src/styles/common";
+@import "src/styles/variables";
+
+.contact-info {
+  @include horizontalList(1rem);
+  align-items: center;
+}
+
+a {
+  @include link($highlight1Dark);
+}
