@@ -1,0 +1,25 @@
+@import "src/styles/common";
+@import "src/styles/variables";
+
+.public-page {
+  display: flex;
+  justify-content: center;
+
+  @include flexCenter();
+}
+
+.contact-container {
+  //@include shadow();
+  @include horizontalList(0);
+  width: 100%;
+  max-width: 1200px;
+  align-items: stretch;
+
+  border: 1px solid $darkColorDark;
+
+  //@include shadow(0, 6px, 4px, -4px, #1e1e1e);
+
+  > * {
+    width: 100%;
+  }
+}
