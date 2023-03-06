@@ -1,0 +1,48 @@
+@import "src/styles/common";
+@import "src/styles/variables";
+
+.contact {
+  background-color: $darkColorDark;
+  color: $lightColorLight;
+  padding: 1rem;
+  height: 100%;
+  @include verticalList(1rem);
+}
+
+h1 {
+  text-align: center;
+}
+
+.inputs {
+  @include verticalList(2rem);
+}
+
+input, textarea {
+  border: $lightColorDark;
+  background-color: $darkColorLight;
+  color: $lightColorLight;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 1px solid $lightColorDark;
+  outline: none;
+  font-size: 1rem;
+}
+
+input:focus, textarea:focus {
+  border: 1px solid $lightColorLight;
+}
+
+textarea {
+  resize: none;
+  height: 10rem;
+}
+
+button {
+  background-color: $highLight2Dark;
+  color: white;
+}
+
+/*.contact-infos{
+  width: 80%;
+  align-self: center;
+}*/
