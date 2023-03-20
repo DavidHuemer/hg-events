@@ -7,12 +7,14 @@ import {SharedModule} from "../../shared/shared.module";
 import {LetModule} from "@rx-angular/template/let";
 import {EquipmentComponent} from './components/equipment/equipment.component';
 import {MatButtonModule} from "@angular/material/button";
+import {EquipmentDetailsPageComponent} from './pages/equipment-details-page/equipment-details-page.component';
 
 
 @NgModule({
   declarations: [
     EquipmentsPageComponent,
-    EquipmentComponent
+    EquipmentComponent,
+    EquipmentDetailsPageComponent
   ],
   imports: [
     CommonModule,

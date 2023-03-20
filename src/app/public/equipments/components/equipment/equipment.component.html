@@ -14,6 +14,6 @@
   <div class="buttons">
     <button (click)="addToRequest(loadedEquipment.id)" class="add-request" mat-raised-button>Zur Anfrage hinzufügen
     </button>
-    <button mat-raised-button>Frage stellen</button>
+    <button [routerLink]="loadedEquipment.id" mat-raised-button>Frage stellen</button>
   </div>
 </div>
