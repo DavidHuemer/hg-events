@@ -1,0 +1,29 @@
+<div *ngIf="equipmentDetail" class="equipment-detail">
+  <div class="image">
+    <img [src]="url" alt="Equipment">
+  </div>
+
+  <div class="content">
+    <h1 class="name">{{equipmentDetail.name}}</h1>
+    <div class="details">{{equipmentDetail.detail}}</div>
+
+    <div class="question">
+      <h2>Frage stellen</h2>
+
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Nachricht</mat-label>
+        <textarea cdkAutosizeMaxRows="5"
+                  cdkAutosizeMinRows="1"
+                  cdkTextareaAutosize
+                  matInput></textarea>
+      </mat-form-field>
+
+      <button color="primary" mat-raised-button>Frage stellen</button>
+    </div>
+  </div>
+</div>

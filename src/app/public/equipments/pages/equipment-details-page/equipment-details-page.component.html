@@ -1,3 +1,7 @@
 <div class="public-page">
-  <p>equipment-details-page works!</p>
+  <div *rxLet="isLoading$; let isLoading" class="content">
+    <app-loadable-container [isLoading]="isLoading">
+      <app-equipment-detail *rxLet="content$; let content" [equipment]="content"></app-equipment-detail>
+    </app-loadable-container>
+  </div>
 </div>

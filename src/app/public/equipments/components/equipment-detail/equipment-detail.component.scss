@@ -1,0 +1,28 @@
+@import "src/styles/common";
+@import "src/styles/variables";
+
+.equipment-detail {
+  @include horizontalList(1rem);
+}
+
+.image {
+  width: 20rem;
+  height: 20rem;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.question {
+  @include verticalList(1rem);
+  border: 1px solid $middleColorLight;
+  padding: 1rem;
+  background-color: $lightColorLight;
+}
+
+h2 {
+  margin: 0;
+}
