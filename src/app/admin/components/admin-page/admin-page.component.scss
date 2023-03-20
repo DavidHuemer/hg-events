@@ -1,8 +1,12 @@
-.admin-full-page{
+@import "src/styles/variables";
+
+.admin-full-page {
   width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: row;
+
+  background-color: $lightColorDark;
 }
 
 .side-menu{
