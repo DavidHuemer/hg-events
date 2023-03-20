@@ -1,3 +1,4 @@
+@import "src/styles/variables";
 @import "src/app/admin/styles/adminVariables";
 @import "src/styles/common";
 
@@ -60,6 +61,9 @@ $fontSize: 15px;
   pointer-events: none;
   color: black;
   width: auto;
+
+  @include shadow(8px, 8px, 8px, -6px, $darkColorDark);
+  border: 1px solid $lightColorDark;
 
   top: 50%;
   transform: translateY(-50%);
