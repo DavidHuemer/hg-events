@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../../../core/services/auth/auth.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-sign-in-page',
@@ -13,7 +14,7 @@ export class SignInPageComponent implements OnInit {
   emailForm: FormControl = new FormControl('', [Validators.required, Validators.email]);
   passwordForm: FormControl = new FormControl('', [Validators.required]);
 
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService, private router: Router) {
     this.signInForm = new FormGroup({
       'email': this.emailForm,
       'password': this.passwordForm
@@ -24,6 +25,7 @@ export class SignInPageComponent implements OnInit {
   }
 
   async signIn() {
-    await this.authService.login(this.emailForm.value, this.passwordForm.value);
+    const result = await this.authService.login(this.emailForm.value, this.passwordForm.value);
+    this.router.navigateByUrl('admin');
   }
 }

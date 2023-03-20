@@ -1,11 +1,12 @@
-@use "src/styles/common";
+@import "src/styles/variables";
+@import "src/styles/common";
 
 $padding: 1rem;
 
 .auth-page {
-  @include common.flexCenter;
+  @include flexCenter;
   background-color: #4158D0;
-  background-image: linear-gradient(43deg, #3867d6 0%, #a55eea 46%, #fa8231 100%);
+  background-image: linear-gradient(43deg, $highlight1Dark 0%, $highLight3Dark 46%, $highLight2Dark 100%);
 }
 
 .auth-card {
@@ -17,8 +18,8 @@ $padding: 1rem;
   width: 400px;
 }
 
-.auth-card-content{
-  @include common.verticalList(1rem);
+.auth-card-content {
+  @include verticalList(1rem);
 }
 
 h1 {
@@ -28,7 +29,7 @@ h1 {
 }
 
 .inputs {
-  @include common.verticalList(1rem);
+  @include verticalList(1rem);
   padding: 0 $padding;
 }
 
