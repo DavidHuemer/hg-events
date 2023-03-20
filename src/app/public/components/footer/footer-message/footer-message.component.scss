@@ -1,0 +1,18 @@
+@import "src/styles/common";
+@import "src/styles/variables";
+
+.footer-message {
+  @include verticalList(1rem);
+  width: 100%;
+}
+
+textarea {
+  resize: none;
+  height: 8rem;
+}
+
+button {
+  background-color: $highlight1Dark;
+  align-self: flex-start;
+  color: white;
+}

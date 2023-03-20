@@ -1,0 +1,21 @@
+@import "src/styles/common";
+
+.footer-links {
+  @include horizontalList(0rem);
+  height: 100%;
+
+  > * {
+    @include verticalList(1rem);
+    width: 100%;
+  }
+}
+
+a {
+  text-decoration: underline;
+}
+
+@media (max-width: 1100px) {
+  .footer-links {
+    width: 20rem;
+  }
+}

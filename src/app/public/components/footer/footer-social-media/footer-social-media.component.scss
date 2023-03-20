@@ -1,19 +1,19 @@
+@import "src/app/public/styles/footerStyles";
+
 .social-media-container {
   width: 100%;
-  display: flex;
-  justify-content: center;
 }
 
 .social-media {
-  width: 350px;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly
+  justify-content: center;
+  gap: $socialMediaButtonWidth;
 }
 
 @media (max-width: 350px) {
   .social-media {
-    justify-content: space-around;
+    justify-content: space-between;
   }
 }
 

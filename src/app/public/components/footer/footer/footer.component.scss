@@ -2,6 +2,8 @@
 @import "src/styles/common";
 @import "src/styles/variables";
 
+$footerHeight: 16rem;
+
 .footer {
   width: 100%;
   @include verticalList(0);
@@ -12,7 +14,7 @@
 .content {
   background: $darkColorLight;
   @include horizontalList(0);
-  padding: 1rem;
+  padding: 1rem 0;
 }
 
 .column {
@@ -30,9 +32,23 @@ h2 {
   color: $lightColorLight;
 }
 
-@media (max-width: 1100px) {
+.footer-links {
+  overflow: hidden;
+}
+
+@media (max-width: 1200px) {
   .content {
     flex-direction: column;
+    height: auto;
+  }
+
+  .column {
+    align-items: center;
+  }
+
+  .column > * {
+    width: 600px;
+    @include verticalList();
   }
 
   .contact {
@@ -47,5 +63,15 @@ h2 {
 
   h2 {
     text-decoration: underline;
+  }
+
+  .footer-links {
+    align-self: center;
+  }
+}
+
+@media (max-width: 620px) {
+  .column > * {
+    width: 100%;
   }
 }

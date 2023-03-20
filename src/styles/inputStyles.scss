@@ -1,0 +1,21 @@
+@import "variables";
+
+input, textarea {
+  border: 1px solid $darkColorLight;
+  background-color: white;
+  color: $darkColorDark;
+  padding: 0.5rem;
+
+  outline: none;
+  border-radius: 0.5rem;
+  caret-color: $darkColorDark;
+}
+
+input:focus, textarea:focus {
+  border: 1px solid $darkColorLight;
+}
+
+input::selection, textarea::selection {
+  background-color: $highlight1Dark;
+  color: white;;
+}

@@ -16,6 +16,10 @@ import {FooterContactComponent} from './components/footer/footer-contact/footer-
 import {FooterSocialMediaComponent} from './components/footer/footer-social-media/footer-social-media.component';
 import {PublicNavigationComponent} from './components/header/public-navigation/public-navigation.component';
 import {HeaderLogoComponent} from './components/header/header-logo/header-logo.component';
+import {FooterLinksComponent} from './components/footer/footer-links/footer-links.component';
+import {FooterMessageComponent} from './components/footer/footer-message/footer-message.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
 
 
 @NgModule({
@@ -29,7 +33,9 @@ import {HeaderLogoComponent} from './components/header/header-logo/header-logo.c
     FooterContactComponent,
     FooterSocialMediaComponent,
     PublicNavigationComponent,
-    HeaderLogoComponent
+    HeaderLogoComponent,
+    FooterLinksComponent,
+    FooterMessageComponent
   ],
   imports: [
     CommonModule,
@@ -37,7 +43,9 @@ import {HeaderLogoComponent} from './components/header/header-logo/header-logo.c
     MatIconModule,
     MatCardModule,
     MatDividerModule,
-    MatButtonModule
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule
   ]
 })
 export class PublicModule { }
