@@ -8,11 +8,18 @@ input, textarea {
 
   outline: none;
   border-radius: 0.5rem;
-  caret-color: $darkColorDark;
 }
 
 input:focus, textarea:focus {
   border: 1px solid $darkColorLight;
+}
+
+.mat-input-element {
+  border-radius: 0;
+}
+
+.mat-input-element:focus {
+  border: none;
 }
 
 input::selection, textarea::selection {

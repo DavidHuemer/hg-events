@@ -56,7 +56,7 @@ h2 {
   }
 
   .column:nth-child(2) {
-    @include horizontalBorder($lightColorDark);
+    @include horizontalBorder($middleColorDark);
     border-left: none;
     border-right: none;
   }
