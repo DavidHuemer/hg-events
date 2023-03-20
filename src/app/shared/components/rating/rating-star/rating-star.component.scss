@@ -1,3 +1,5 @@
+@import "src/styles/variables";
+
 .star {
-  color: #f1c40f;
+  color: $ratingColor;
 }
