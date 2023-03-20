@@ -1,5 +1,7 @@
+@import "src/styles/variables";
+
 $light-background-color: white;
 $menuWidth: 78px;
 $openMenuWidth: 250px;
-$menuBackgroundColor: #2c3e50;
+$menuBackgroundColor: $darkColorDark;
 $menuAnimationTime: 0.4s;
