@@ -12,13 +12,15 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {ReactiveFormsModule} from "@angular/forms";
 import {SharedModule} from "../../shared/shared.module";
+import {EditEquipmentImageComponent} from './components/edit-equipment-image/edit-equipment-image.component';
 
 
 @NgModule({
   declarations: [
     AdminEquipmentsPageComponent,
     AdminEquipmentRowComponent,
-    EditEquipmentPageComponent
+    EditEquipmentPageComponent,
+    EditEquipmentImageComponent
   ],
   imports: [
     CommonModule,
