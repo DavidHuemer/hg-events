@@ -6,12 +6,14 @@ import {AdminEquipmentsPageComponent} from './pages/admin-equipments-page/admin-
 import {AdminRatingsModule} from "../admin-ratings/admin-ratings.module";
 import {AdminModule} from "../admin.module";
 import {AdminEquipmentRowComponent} from './components/admin-equipment-row/admin-equipment-row.component';
+import {EditEquipmentPageComponent} from './pages/edit-equipment-page/edit-equipment-page.component';
 
 
 @NgModule({
   declarations: [
     AdminEquipmentsPageComponent,
-    AdminEquipmentRowComponent
+    AdminEquipmentRowComponent,
+    EditEquipmentPageComponent
   ],
   imports: [
     CommonModule,
