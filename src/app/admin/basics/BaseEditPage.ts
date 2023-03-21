@@ -1,60 +1,57 @@
 import {RxState} from "@rx-angular/state";
-import {map, Observable, Subject, withLatestFrom} from "rxjs";
-import {LoadableDashboardPage, LoadableState} from "./LoadableDashboardPage";
+import {map, Subject, withLatestFrom} from "rxjs";
 import {ActivatedRoute} from "@angular/router";
 import {BaseFirebaseService} from "../../core/services/basics/BaseFirebaseService";
 import {FormGroup} from "@angular/forms";
+import {BaseLoadDashboardPage} from "./BaseLoadDashboardPage";
+import {AdminGlobalState} from "../../core/states/AdminGlobalState";
+import {LoadingState} from "../../core/basics/loader/LoadingHandler";
+import {BaseEntity} from "../../core/models/basics/BaseEntity";
 
-export interface EditPageState<T> extends LoadableState {
-  item: T;
+export interface EditPageState<T> extends LoadingState<T> {
   itemId: string;
 }
 
-export abstract class BaseEditPage<T, R> extends LoadableDashboardPage {
-  public item$: Observable<T>;
+export abstract class BaseEditPage<T extends BaseEntity, R> extends BaseLoadDashboardPage<T> {
   save$: Subject<void> = new Subject();
   cancel$: Subject<void> = new Subject<void>();
 
-  public abstract formGroup: FormGroup;
-
-  private state: RxState<EditPageState<T>>;
   private route: ActivatedRoute;
-  private service: BaseFirebaseService<T, R>;
+  private service: BaseFirebaseService<T, R>
 
-  protected constructor(state: RxState<EditPageState<T>>, service: BaseFirebaseService<T, R>, route: ActivatedRoute) {
-    super(state);
-    this.state = state;
-    this.route = route;
+  protected constructor(globalState: RxState<AdminGlobalState>, state: RxState<EditPageState<T>>,
+                        service: BaseFirebaseService<T, R>, route: ActivatedRoute) {
+    super(globalState, state);
     this.service = service;
-    this.item$ = state.select('item');
+    this.route = route;
+    this.setupCancel();
+    this.setupSave();
 
-    this.cancel$.pipe(
-      withLatestFrom(this.item$),
-      map(([_, item]) => item)
-    ).subscribe(item => this.updateForms(item));
-
-    this.save$.pipe(
-      withLatestFrom(this.state.select('itemId')),
-      map(([_, id]) => id),
-      map((id) => ({item: this.createDto(), id: id}))
-    ).subscribe(x => {
-      this.service.update(x.id, x.item);
+    this.content$.subscribe(entity => {
+      this.updateForms(entity);
     });
   }
 
   protected setup() {
-    this.formGroup = this.createFormGroup();
-
     const id = this.route.snapshot.paramMap.get('id') as string;
-    this.state.set({itemId: id});
+    this.load(this.service.getById(id));
+  }
 
-    const ratingLoader = this.service.getById(id);
+  private setupCancel() {
+    this.cancel$.pipe(
+      withLatestFrom(this.content$),
+      map(([_, item]) => item)
+    ).subscribe(item => this.updateForms(item));
+  }
 
-    this.state.connect('item', ratingLoader);
-
-    ratingLoader.subscribe(rating => {
-      this.state.set({isLoading: false});
-      this.updateForms(rating);
+  private setupSave() {
+    this.save$.pipe(
+      withLatestFrom(this.content$),
+      map(([_, entity]) => entity),
+      map((entity: T) => ({item: this.createDto(), id: entity.id}))
+    ).subscribe(x => {
+      console.log('update');
+      this.service.update(x.id, x.item);
     });
   }
 

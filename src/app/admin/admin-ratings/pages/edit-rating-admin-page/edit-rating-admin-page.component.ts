@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {BaseEditPage, EditPageState} from "../../../basics/BaseEditPage";
 import {Rating, RatingDto} from "../../../../core/models/rating";
 import {RxState} from "@rx-angular/state";
@@ -6,6 +6,7 @@ import {RatingsService} from "../../../../core/services/ratings/ratings.service"
 import {ActivatedRoute} from "@angular/router";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Timestamp} from "@angular/fire/firestore";
+import {ADMIN_GLOBAL_RX_STATE, AdminGlobalState} from "../../../../core/states/AdminGlobalState";
 
 interface EditRatingState extends EditPageState<Rating> {
 
@@ -20,18 +21,23 @@ interface EditRatingState extends EditPageState<Rating> {
 export class EditRatingAdminPageComponent extends BaseEditPage<Rating, RatingDto> implements OnInit {
 
   formGroup: FormGroup;
-
   autorForm: FormControl = new FormControl('', [Validators.required]);
   titleForm: FormControl = new FormControl('', [Validators.required]);
   messageForm: FormControl = new FormControl('');
 
-  constructor(state: RxState<EditRatingState>, private ratingsService: RatingsService, route: ActivatedRoute) {
-    super(state, ratingsService, route);
+
+  constructor(@Inject(ADMIN_GLOBAL_RX_STATE) globalState: RxState<AdminGlobalState>, state: RxState<EditRatingState>,
+              private ratingsService: RatingsService, route: ActivatedRoute) {
+    super(globalState, state, ratingsService, route);
     this.formGroup = this.createFormGroup();
   }
 
   ngOnInit(): void {
     this.setup();
+  }
+
+  protected getTitle(): string {
+    return "Gästebucheintrag bearbeiten";
   }
 
   protected updateForms(item: Rating): void {
