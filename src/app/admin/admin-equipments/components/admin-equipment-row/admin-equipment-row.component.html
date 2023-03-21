@@ -1,0 +1,14 @@
+<div *ngIf="showingEquipment" class="table-row">
+  <div class="image">
+    <div class="image-container">
+      <img [src]="url" alt="Equipment Bild">
+    </div>
+  </div>
+
+  <div>{{showingEquipment.name}}</div>
+  <div>{{showingEquipment.detail}}</div>
+
+  <app-action-buttons (delete)="deleteClicked()" (edit)="editClicked()">
+
+  </app-action-buttons>
+</div>

@@ -1,0 +1,19 @@
+@import "src/styles/common";
+
+$imageSize: 150px;
+
+.image {
+  @include flexCenter();
+}
+
+.image-container {
+  width: $imageSize;
+  height: $imageSize;
+  padding: 1rem;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

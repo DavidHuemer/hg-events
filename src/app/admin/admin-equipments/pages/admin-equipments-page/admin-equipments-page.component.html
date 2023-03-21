@@ -3,30 +3,10 @@
     <h1>Equipments</h1>
     <div class="equipments">
       <app-scroll-table [headers]="headers">
-        <div *ngFor="let equipment of content$ | async" class="table-row">
-          <div>{{equipment.name}}</div>
-          <div>
-            <app-action-buttons (delete)="delete$.next(equipment)" (edit)="edit$.next(equipment)">
-
-            </app-action-buttons>
-          </div>
-        </div>
+        <app-admin-equipment-row (delete)="delete$.next(equipment)" (edit)="edit$.next(equipment)"
+                                 *ngFor="let equipment of content$ | async" [equipment]="equipment">
+        </app-admin-equipment-row>
       </app-scroll-table>
     </div>
-
-    <!--<h1>Gästebucheinträge</h1>
-
-    <div class="ratings">
-      <app-scroll-table [headers]="headers">
-        <div class="table-row" *ngFor="let equipment of content$ | async">
-          <div>{{equipment.name}}</div>
-          <div>
-            <app-action-buttons (delete)="delete$.next(equipment)" (edit)="edit$.next(equipment)">
-
-            </app-action-buttons>
-          </div>
-        </div>
-      </app-scroll-table>
-    </div>-->
   </div>
 </div>

@@ -19,7 +19,7 @@ interface EquipmentsPageState extends CollectionLoadingState<Equipment> {
 })
 export class AdminEquipmentsPageComponent extends BaseEditableCollectionDashboardPage<Equipment, EquipmentDto> implements OnInit {
 
-  headers: string[] = ["Name", "Aktion"];
+  headers: string[] = ["Bild", "Name", "Details", "Aktion"];
 
   constructor(@Inject(ADMIN_GLOBAL_RX_STATE) globalState: RxState<AdminGlobalState>, state: RxState<EquipmentsPageState>,
               firebaseService: EquipmentsService, router: Router, route: ActivatedRoute) {
