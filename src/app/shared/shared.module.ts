@@ -9,6 +9,7 @@ import {SaveCancelButtonsComponent} from './components/save-cancel-buttons/save-
 import {MatButtonModule} from "@angular/material/button";
 import {LoadableContainerComponent} from './components/loadable-container/loadable-container.component';
 import {LoadingComponent} from './components/loading/loading.component';
+import {AreaComponent} from './components/area/area.component';
 
 
 @NgModule({
@@ -18,13 +19,15 @@ import {LoadingComponent} from './components/loading/loading.component';
     RatingVisualizationComponent,
     SaveCancelButtonsComponent,
     LoadableContainerComponent,
-    LoadingComponent
+    LoadingComponent,
+    AreaComponent
   ],
   exports: [
     LoadableListComponent,
     RatingVisualizationComponent,
     SaveCancelButtonsComponent,
-    LoadableContainerComponent
+    LoadableContainerComponent,
+    AreaComponent
   ],
   imports: [
     CommonModule,

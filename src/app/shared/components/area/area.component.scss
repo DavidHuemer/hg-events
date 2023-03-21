@@ -1,0 +1,8 @@
+@import "src/styles/common";
+@import "src/styles/variables";
+
+.area {
+  @include verticalList(1rem);
+  border: 1px solid $lightColorDark;
+  padding: 1rem;
+}
