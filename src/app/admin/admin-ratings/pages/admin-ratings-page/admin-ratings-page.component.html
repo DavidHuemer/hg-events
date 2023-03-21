@@ -8,7 +8,7 @@
         <div class="table-row" *ngFor="let rating of ratings$ | async">
           <div>{{rating.autor}}</div>
           <div>{{rating.title}}</div>
-          <div>{{rating.rating}}</div>
+          <app-rating-visualization [rating]="rating.rating"></app-rating-visualization>
           <div>{{rating.message}}</div>
           <div>
             <app-action-buttons (delete)="delete$.next(rating)" (edit)="edit$.next(rating)">

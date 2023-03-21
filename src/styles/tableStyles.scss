@@ -1,9 +1,11 @@
+@import "variables";
+@import "common";
+
 .table-row {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
+  @include horizontalList(1rem);
 
   align-items: center;
+  padding: 0 1rem;
 }
 
 .table-row > * {
@@ -11,5 +13,5 @@
 }
 
 .table-row:hover {
-  background-color: #e3e3e3;
+  background-color: darken($lightColorLight, 10%);
 }
