@@ -8,6 +8,10 @@ const routes: Routes = [
       {
         path: 'ratings',
         loadChildren: () => import('./admin-ratings/admin-ratings.module').then(m => m.AdminRatingsModule)
+      },
+      {
+        path: 'equipment',
+        loadChildren: () => import('./admin-equipments/admin-equipments.module').then(m => m.AdminEquipmentsModule)
       }
     ]
   }
