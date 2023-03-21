@@ -11,7 +11,7 @@
           <div>{{rating.rating}}</div>
           <div>{{rating.message}}</div>
           <div>
-            <app-action-buttons (edit)="edit(rating.id)">
+            <app-action-buttons (edit)="edit$.next(rating)">
 
             </app-action-buttons>
           </div>

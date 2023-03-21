@@ -1,14 +1,15 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {RatingsService} from "../../../../core/services/ratings/ratings.service";
 import {RxState} from "@rx-angular/state";
-import {Rating} from "../../../../core/models/rating";
-import {ActivatedRoute, Router} from "@angular/router";
-import {BaseDashboardPage} from "../../../basics/BaseDashboardPage";
+import {Rating, RatingDto} from "../../../../core/models/rating";
 import {PUBLIC_GLOBAL_RX_STATE} from "../../../../core/states/PublicGlobalState";
 import {AdminGlobalState} from "../../../../core/states/AdminGlobalState";
+import {BaseEditableCollectionDashboardPage} from "../../../basics/BaseEditableCollectionDashboardPage";
+import {CollectionLoadingState} from "../../../../core/basics/loader/CollectionLoadingHandler";
+import {ActivatedRoute, Router} from "@angular/router";
 
-interface RatingsPageState {
-  ratings: Rating[];
+interface RatingsPageState extends CollectionLoadingState<Rating> {
+
 }
 
 @Component({
@@ -17,24 +18,24 @@ interface RatingsPageState {
   styleUrls: ['./admin-ratings-page.component.scss'],
   providers: [RxState]
 })
-export class AdminRatingsPageComponent extends BaseDashboardPage implements OnInit {
+export class AdminRatingsPageComponent extends BaseEditableCollectionDashboardPage<Rating, RatingDto> implements OnInit {
 
-  ratings$ = this.state.select('ratings');
+  ratings$ = this.loadingHandler.getContent();
   headers: string[] = ["Autor", "Titel", "Bewertung", "Nachricht", "Aktionen"]
 
-  constructor(@Inject(PUBLIC_GLOBAL_RX_STATE) globalState: RxState<AdminGlobalState>, private state: RxState<RatingsPageState>, private ratingsService: RatingsService, private router: Router, private route: ActivatedRoute) {
-    super(globalState);
-    this.state.connect('ratings', ratingsService.getRatings());
+  constructor(@Inject(PUBLIC_GLOBAL_RX_STATE) globalState: RxState<AdminGlobalState>, state: RxState<RatingsPageState>,
+              firebaseService: RatingsService, router: Router, route: ActivatedRoute) {
+    super(globalState, state, firebaseService, router, route);
   }
 
   ngOnInit(): void {
   }
 
-  edit(id: string) {
-    this.router.navigate([id], {relativeTo: this.route});
-  }
-
   protected getTitle(): string {
     return "Gästebucheinträge";
+  }
+
+  getNameOfEntity(entity: Rating): string {
+    return entity.title;
   }
 }

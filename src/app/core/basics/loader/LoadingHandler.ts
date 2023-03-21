@@ -6,8 +6,11 @@ export interface LoadingState<T> {
   content: T;
 }
 
+/**
+ * Handles the loading
+ */
 export class LoadingHandler<T> {
-  constructor(private state: RxState<LoadingState<T>>) {
+  constructor(protected state: RxState<LoadingState<T>>) {
     this.state.set({isLoading: true})
 
     state.select('content').subscribe(() => {

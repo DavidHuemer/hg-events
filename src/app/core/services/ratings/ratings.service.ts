@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {addDoc, collection, collectionData, Firestore} from "@angular/fire/firestore";
+import {addDoc, collectionData, Firestore} from "@angular/fire/firestore";
 import {map, Observable} from "rxjs";
 import {Rating, RatingDto} from "../../models/rating";
 import {BaseFirebaseService} from "../basics/BaseFirebaseService";
@@ -26,9 +26,5 @@ export class RatingsService extends BaseFirebaseService<Rating, RatingDto> {
   addRating(rating: RatingDto) {
     const ratingsRef = this.getCollection();
     return addDoc(ratingsRef, rating);
-  }
-
-  private getCollection() {
-    return collection(this.firestore, 'ratings');
   }
 }

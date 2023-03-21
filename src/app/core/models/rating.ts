@@ -1,7 +1,7 @@
-import { Timestamp } from "@angular/fire/firestore";
+import {Timestamp} from "@angular/fire/firestore";
+import {BaseEntity} from "./basics/BaseEntity";
 
-export interface Rating extends RatingDto{
-  id : string;
+export interface Rating extends RatingDto, BaseEntity {
 }
 
 export interface RatingDto {
