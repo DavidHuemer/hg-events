@@ -1,1 +1,29 @@
-<p>edit-equipment-page works!</p>
+<div class="dashboard-page">
+  <app-dashboard-card title="Bearbeiten">
+    <div class="content">
+      <button mat-raised-button routerLink="../">Zurück</button>
+
+      <div class="edit">
+        <div class="edit-information">
+          <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input [formControl]="nameFormControl" matInput>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Details</mat-label>
+            <textarea [formControl]="nameFormControl" matInput>
+
+          </textarea>
+          </mat-form-field>
+
+          <app-save-cancel-buttons></app-save-cancel-buttons>
+        </div>
+
+        <div class="edit-image">
+
+        </div>
+      </div>
+    </div>
+  </app-dashboard-card>
+</div>

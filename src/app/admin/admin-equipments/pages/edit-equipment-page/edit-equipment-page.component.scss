@@ -1,0 +1,21 @@
+@import "src/styles/common";
+
+.content {
+  @include verticalList(0);
+}
+
+.edit {
+  @include horizontalList(1rem);
+
+  & > * {
+    width: 100%;
+  }
+}
+
+.edit-information {
+  @include verticalList(1rem);
+}
+
+textarea {
+  min-height: 10rem;
+}
