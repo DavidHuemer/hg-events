@@ -1,7 +1,6 @@
 import {Component, EventEmitter, Inject, OnInit, Output} from '@angular/core';
-import {PUBLIC_GLOBAL_RX_STATE} from "../../../core/states/PublicGlobalState";
 import {RxState} from "@rx-angular/state";
-import {AdminGlobalState} from "../../../core/states/AdminGlobalState";
+import {ADMIN_GLOBAL_RX_STATE, AdminGlobalState} from "../../../core/states/AdminGlobalState";
 
 @Component({
   selector: 'app-admin-header',
@@ -14,8 +13,8 @@ export class AdminHeaderComponent implements OnInit {
   title$ = this.globalState.select('pageTitle');
 
 
-  constructor(@Inject(PUBLIC_GLOBAL_RX_STATE) private globalState: RxState<AdminGlobalState>) {
-
+  constructor(@Inject(ADMIN_GLOBAL_RX_STATE) private globalState: RxState<AdminGlobalState>) {
+    this.globalState.select('pageTitle').subscribe(pt => console.log(pt));
   }
 
   ngOnInit(): void {

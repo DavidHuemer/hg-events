@@ -2,8 +2,7 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {RatingsService} from "../../../../core/services/ratings/ratings.service";
 import {RxState} from "@rx-angular/state";
 import {Rating, RatingDto} from "../../../../core/models/rating";
-import {PUBLIC_GLOBAL_RX_STATE} from "../../../../core/states/PublicGlobalState";
-import {AdminGlobalState} from "../../../../core/states/AdminGlobalState";
+import {ADMIN_GLOBAL_RX_STATE, AdminGlobalState} from "../../../../core/states/AdminGlobalState";
 import {BaseEditableCollectionDashboardPage} from "../../../basics/BaseEditableCollectionDashboardPage";
 import {CollectionLoadingState} from "../../../../core/basics/loader/CollectionLoadingHandler";
 import {ActivatedRoute, Router} from "@angular/router";
@@ -23,7 +22,7 @@ export class AdminRatingsPageComponent extends BaseEditableCollectionDashboardPa
   ratings$ = this.loadingHandler.getContent();
   headers: string[] = ["Autor", "Titel", "Bewertung", "Nachricht", "Aktionen"]
 
-  constructor(@Inject(PUBLIC_GLOBAL_RX_STATE) globalState: RxState<AdminGlobalState>, state: RxState<RatingsPageState>,
+  constructor(@Inject(ADMIN_GLOBAL_RX_STATE) globalState: RxState<AdminGlobalState>, state: RxState<RatingsPageState>,
               firebaseService: RatingsService, router: Router, route: ActivatedRoute) {
     super(globalState, state, firebaseService, router, route);
   }
