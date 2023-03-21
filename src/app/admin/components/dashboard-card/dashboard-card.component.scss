@@ -1,23 +1,28 @@
-.dashboard-card{
+@import "src/styles/variables";
+
+.dashboard-card {
   background-color: #f8f8f8;
-  border: 1px solid #95a5a6;
+  border: 1px solid $middleColorDark;
   display: flex;
   flex-direction: column;
 
   height: 100%;
   overflow: auto;
 
+  padding: 0;
+
   &.full {
     width: 100%;
   }
 }
 
-.header{
-  background-color: #bdc3c7;
+.header {
+  background-color: $middleColorLight;
   padding: 1rem;
 }
 
-.content{
+.content {
   height: 100%;
   overflow: auto;
+  padding: 1rem;
 }
