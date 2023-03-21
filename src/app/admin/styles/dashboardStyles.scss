@@ -1,4 +1,4 @@
-.dashboard-card{
+.dashboard-card {
   background-color: #f8f8f8;
   border: 1px solid #95a5a6;
   display: flex;
@@ -7,17 +7,9 @@
   height: 100%;
   overflow: auto;
 
+  padding: 1rem;
+
   &.full {
     width: 100%;
   }
-}
-
-.header{
-  background-color: #bdc3c7;
-  padding: 1rem;
-}
-
-.content{
-  height: 100%;
-  overflow: auto;
 }

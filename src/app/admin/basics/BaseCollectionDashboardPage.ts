@@ -13,11 +13,14 @@ export abstract class BaseCollectionDashboardPage<T extends BaseEntity> extends 
   public delete$: Subject<T> = new Subject<T>();
   protected loadingHandler: CollectionLoadingHandler<T>;
 
+  public content$: Observable<T[]>;
+
   protected constructor(globalState: RxState<AdminGlobalState>, state: RxState<CollectionLoadingState<T>>,
                         firebaseReceiver: BaseFirebaseReceiver<T>) {
     super(globalState);
     this.loadingHandler = new CollectionLoadingHandler<T>(state);
     this.status$ = this.loadingHandler.getStatus();
+    this.content$ = this.loadingHandler.getContent();
 
     this.loadingHandler.load(firebaseReceiver.getAll());
 

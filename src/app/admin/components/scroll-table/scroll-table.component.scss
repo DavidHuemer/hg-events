@@ -4,6 +4,8 @@
 .scroll-table {
   @include verticalList(0);
   height: 100%;
+
+  border: 1px solid $lightColorDark;
 }
 
 .header {

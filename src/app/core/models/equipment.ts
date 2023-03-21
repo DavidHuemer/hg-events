@@ -1,5 +1,10 @@
-export interface Equipment {
-  id: string;
+import {BaseEntity} from "./basics/BaseEntity";
+
+export interface Equipment extends BaseEntity {
   name: string;
   detail: string;
+}
+
+export interface EquipmentDto {
+
 }

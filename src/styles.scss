@@ -7,6 +7,8 @@
 @import "styles/tableStyles";
 @import "styles/inputStyles";
 
+@import "app/admin/styles/dashboardStyles";
+
 @include mat.core();
 
 $primary-palette: (

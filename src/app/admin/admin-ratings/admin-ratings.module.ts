@@ -19,6 +19,9 @@ import {ReactiveFormsModule} from "@angular/forms";
     ScrollTableComponent,
     EditRatingAdminPageComponent
   ],
+  exports: [
+    ScrollTableComponent
+  ],
   imports: [
     CommonModule,
     AdminRatingsRoutingModule,

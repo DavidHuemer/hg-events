@@ -3,6 +3,8 @@ import {CommonModule} from '@angular/common';
 
 import {AdminEquipmentsRoutingModule} from './admin-equipments-routing.module';
 import {AdminEquipmentsPageComponent} from './pages/admin-equipments-page/admin-equipments-page.component';
+import {AdminRatingsModule} from "../admin-ratings/admin-ratings.module";
+import {AdminModule} from "../admin.module";
 
 
 @NgModule({
@@ -11,7 +13,9 @@ import {AdminEquipmentsPageComponent} from './pages/admin-equipments-page/admin-
   ],
   imports: [
     CommonModule,
-    AdminEquipmentsRoutingModule
+    AdminEquipmentsRoutingModule,
+    AdminRatingsModule,
+    AdminModule
   ]
 })
 export class AdminEquipmentsModule {
