@@ -1,1 +1,21 @@
-<p>edit-equipment-image works!</p>
+<div class="edit-image">
+  <div class="image">
+    <div class="image-container">
+      <img [src]="imgUrl" alt="Equipment">
+    </div>
+  </div>
+
+  <div class="showingImage">
+    <div>Aktuelles Bild:</div>
+    <div class="currentImage">
+      {{file | equipmentFile}}
+    </div>
+  </div>
+
+  <div class="choose">
+    <app-image-chooser (fileChosen)="fileChosen($event)"></app-image-chooser>
+  </div>
+
+  <app-save-cancel-buttons (cancelled)="cancel()"
+                           (saved)="save()" [saveEnabled]="file != null"></app-save-cancel-buttons>
+</div>

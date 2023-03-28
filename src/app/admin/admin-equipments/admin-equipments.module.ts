@@ -13,6 +13,11 @@ import {MatInputModule} from "@angular/material/input";
 import {ReactiveFormsModule} from "@angular/forms";
 import {SharedModule} from "../../shared/shared.module";
 import {EditEquipmentImageComponent} from './components/edit-equipment-image/edit-equipment-image.component';
+import {ImageChooserComponent} from './components/image-chooser/image-chooser.component';
+import {MatIconModule} from "@angular/material/icon";
+import {NgxFileDropModule} from "ngx-file-drop";
+import {LetModule} from "@rx-angular/template/let";
+import {EquipmentFilePipe} from './pipes/equipment-file.pipe';
 
 
 @NgModule({
@@ -20,7 +25,9 @@ import {EditEquipmentImageComponent} from './components/edit-equipment-image/edi
     AdminEquipmentsPageComponent,
     AdminEquipmentRowComponent,
     EditEquipmentPageComponent,
-    EditEquipmentImageComponent
+    EditEquipmentImageComponent,
+    ImageChooserComponent,
+    EquipmentFilePipe
   ],
   imports: [
     CommonModule,
@@ -31,7 +38,10 @@ import {EditEquipmentImageComponent} from './components/edit-equipment-image/edi
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    MatIconModule,
+    NgxFileDropModule,
+    LetModule
   ]
 })
 export class AdminEquipmentsModule {

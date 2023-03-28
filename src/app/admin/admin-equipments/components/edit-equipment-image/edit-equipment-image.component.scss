@@ -1,0 +1,30 @@
+@import "src/styles/common";
+
+$imageSize: 200px;
+
+.edit-image {
+  @include verticalList(1rem)
+}
+
+.image {
+  @include flexCenter();
+}
+
+.image-container {
+  width: $imageSize;
+  height: $imageSize;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.showingImage {
+  @include horizontalList(1rem);
+}
+
+.currentImage {
+  font-style: italic;
+}

@@ -3,7 +3,7 @@ import {collection, collectionData, Firestore} from "@angular/fire/firestore";
 import {Observable} from "rxjs";
 import {Equipment} from "../../models/equipment";
 import {BaseFirebaseService} from "../basics/BaseFirebaseService";
-import {getDownloadURL, ref, Storage} from "@angular/fire/storage";
+import {getDownloadURL, ref, Storage, uploadBytesResumable} from "@angular/fire/storage";
 
 @Injectable({
   providedIn: 'root'
@@ -22,5 +22,10 @@ export class EquipmentsService extends BaseFirebaseService<Equipment, Equipment>
   public getDownloadUrl(equipmentId: string): Promise<string> {
     const storageRef = ref(this.storage, `equipments/${equipmentId}`);
     return getDownloadURL(storageRef);
+  }
+
+  public uploadEquipmentImage(equipment: Equipment, file: File) {
+    const storageRef = ref(this.storage, `equipments/${equipment.id}`);
+    return uploadBytesResumable(storageRef, file);
   }
 }
