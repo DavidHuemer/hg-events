@@ -1,7 +1,7 @@
 @import "src/styles/common";
 
 .content {
-  @include verticalList(0);
+  @include verticalList(1rem);
 }
 
 .edit {

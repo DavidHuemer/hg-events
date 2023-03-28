@@ -6,5 +6,6 @@ export interface Equipment extends BaseEntity {
 }
 
 export interface EquipmentDto {
-
+  name: string;
+  detail: string;
 }

@@ -50,7 +50,6 @@ export abstract class BaseEditPage<T extends BaseEntity, R> extends BaseLoadDash
       map(([_, entity]) => entity),
       map((entity: T) => ({item: this.createDto(), id: entity.id}))
     ).subscribe(x => {
-      console.log('update');
       this.service.update(x.id, x.item);
     });
   }

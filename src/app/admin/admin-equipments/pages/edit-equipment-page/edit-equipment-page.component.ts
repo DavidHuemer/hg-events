@@ -18,22 +18,31 @@ interface EditEquipmentState extends EditPageState<Equipment> {
   providers: [RxState]
 })
 export class EditEquipmentPageComponent extends BaseEditPage<Equipment, EquipmentDto> implements OnInit {
-  nameFormControl = new FormControl('', [Validators.required]);
+  nameFormControl: FormControl = new FormControl<string>('', [Validators.required]);
+  detailFormControl: FormControl = new FormControl<string>('', [Validators.required]);
+
+  formGroup: FormGroup;
 
   constructor(@Inject(ADMIN_GLOBAL_RX_STATE) globalState: RxState<AdminGlobalState>, state: RxState<EditEquipmentState>, service: EquipmentsService, route: ActivatedRoute) {
     super(globalState, state, service, route);
+    this.formGroup = this.createFormGroup();
   }
 
   ngOnInit(): void {
+    this.setup();
   }
 
   protected createDto(): EquipmentDto {
-    return {};
+    return {
+      name: this.nameFormControl.value,
+      detail: this.detailFormControl.value
+    };
   }
 
   protected createFormGroup(): FormGroup {
     return new FormGroup({
-      nameForm: this.nameFormControl
+      nameForm: this.nameFormControl,
+      detailForm: this.detailFormControl
     });
   }
 
@@ -42,6 +51,8 @@ export class EditEquipmentPageComponent extends BaseEditPage<Equipment, Equipmen
   }
 
   protected updateForms(item: Equipment): void {
+    this.nameFormControl.setValue(item.name);
+    this.detailFormControl.setValue(item.detail);
   }
 
 }
